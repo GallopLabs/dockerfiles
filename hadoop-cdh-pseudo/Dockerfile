@@ -1,4 +1,4 @@
-FROM galloplabs/hadoop-cdh-base:cdh5
+FROM galloplabs/hadoop-cdh-base
 MAINTAINER Jonathon W. Marshall "jonathon@gallop.io"
 
 # INSTALL PSEUDO DISTRIBUTED CDH

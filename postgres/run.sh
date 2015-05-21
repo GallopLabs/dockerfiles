@@ -30,7 +30,7 @@ EOF
 
 if [ ! -d ${PG_DATADIR} ]; then
   echo "Bootstrapping PostgreSQL database..."
-  su postgres -c "${PG_BINDIR}/postgres -H ${PG_BINDIR}/initdb --pgdata=${PG_DATADIR} \
+  su postgres -c "${PG_BINDIR}/initdb --pgdata=${PG_DATADIR} \
     --username=postgres --encoding=unicode --auth=trust" >/dev/null
 fi
 

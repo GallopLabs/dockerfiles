@@ -7,6 +7,8 @@ RUN apt-get install -y --no-install-recommends postgresql-9.3 postgresql-contrib
 
 ADD run.sh /run.sh
 
+VOLUME /var/lib/postgresql
+
 EXPOSE 5432
 
 CMD ["/run.sh"]

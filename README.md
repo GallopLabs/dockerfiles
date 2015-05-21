@@ -1,2 +1,3 @@
 # dockerfiles
-Public Dockerfiles
+
+The Gallop Labs repository of public docker images.

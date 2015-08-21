@@ -1,5 +1,5 @@
 FROM galloplabs/nodejs
 MAINTAINER Jonathon W. Marshall "jonathon@gallop.io"
 
-RUN apt-get update
-RUN apt-get install -y ruby1.9.1 && gem install bundler
+RUN apk --update add ruby ruby-dev && gem install bundler --no-ri --no-rdoc
+

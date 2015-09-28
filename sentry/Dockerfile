@@ -17,7 +17,7 @@ ENV SENTRY_VERSION 7.1.4
 RUN pip install sentry==$SENTRY_VERSION
 
 # install plugins
-ENV SENTRY_SLACK_VERSION=0.2.0
+ENV SENTRY_SLACK_VERSION 0.2.0
 RUN pip install sentry-slack==$SENTRY_SLACK_VERSION
 
 ADD sentry.conf.py /home/user/.sentry/

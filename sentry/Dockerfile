@@ -14,11 +14,11 @@ WORKDIR /home/user
 RUN pip install psycopg2 redis hiredis nydus
 
 ENV SENTRY_VERSION 7.1.4
-
 RUN pip install sentry==$SENTRY_VERSION
 
 # install plugins
-RUN pip install sentry-slack
+ENV SENTRY_SLACK_VERSION=0.2.0
+RUN pip install sentry-slack==$SENTRY_SLACK_VERSION
 
 ADD sentry.conf.py /home/user/.sentry/
 RUN chown -R user:user /home/user/.sentry # TODO this might not work on AUFS sometimes

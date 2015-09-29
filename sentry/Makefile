@@ -2,7 +2,6 @@
 NAME=galloplabs/sentry
 SHELL=/usr/bin/env bash
 VERSION=$(shell grep 'SENTRY_VERSION ' Dockerfile | cut -d' ' -f3)
-GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD 2>/dev/null)
 GIT_COMMIT=$(shell git rev-parse --short HEAD 2>/dev/null)
 # Push to your private repo
 # REGISTRY=registry:5000
@@ -12,7 +11,7 @@ build:
 	docker tag $(NAME):latest $(NAME):$(GIT_COMMIT)
 	docker tag $(NAME):latest $(NAME):$(VERSION)
 
-push:
+push: build
 ifdef REGISTRY
 	docker tag $(NAME):$(GIT_COMMIT) $(REGISTRY)/$(NAME):$(GIT_COMMIT)
 	docker tag $(NAME):$(VERSION) $(REGISTRY)/$(NAME):$(VERSION)

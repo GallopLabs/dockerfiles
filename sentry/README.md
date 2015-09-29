@@ -1,8 +1,21 @@
-# About this Repo
+# Sentry
 
-This is the Git repo of the official Docker image for [sentry](https://registry.hub.docker.com/_/sentry/). See the
-Hub page for the full readme on how to use the Docker image and for information
-regarding contributing and issues.
+Sentry is a realtime event logging and aggregation platform. It specializes in monitoring errors and extracting all the information needed to do a proper post-mortem without any of the hassle of the standard user feedback loop.
 
-The full readme is generated over in [docker-library/docs](https://github.com/docker-library/docs),
-specificially in [docker-library/docs/sentry](https://github.com/docker-library/docs/tree/master/sentry).
+> [github.com/getsentry/sentry](https://github.com/getsentry/sentry)
+
+# About This Image
+
+This is a fork of the official Docker image for [sentry](https://registry.hub.docker.com/_/sentry/).
+
+# Docker Compose
+
+Take Sentry for a test-drive with docker-compose.
+
+Note: You will probably need to update the `SENTRY_URL_PREFIX` in `docker-compose.yml` to match your Docker host.
+
+```
+docker-compose build
+docker-compose up -d
+docker-compose run sentry sentry upgrade
+```

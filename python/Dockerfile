@@ -7,5 +7,5 @@ ADD https://raw.github.com/pypa/pip/master/contrib/get-pip.py get-pip.py
 RUN python get-pip.py
 RUN pip install --upgrade pip
 
-RUN pip install requests[security]
+RUN pip install requests[security]==2.8.0
 RUN pip install virtualenv
